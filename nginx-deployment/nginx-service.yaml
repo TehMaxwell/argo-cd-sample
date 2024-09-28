@@ -4,7 +4,7 @@ metadata:
   name: nginx
 spec:
   selector:
-    name: nginx
+    app.kubernetes.io/name: nginx
   ports:
     - protocol: TCP
       port: 80
