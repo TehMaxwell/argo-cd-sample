@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-argocd
+  name: nginx
 spec:
   selector:
     app.kubernetes.io/name: nginx
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 9000
