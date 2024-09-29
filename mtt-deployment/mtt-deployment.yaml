@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mtt-userregistrationrequested
+  labels:
+    app: mtt-userregistrationrequested
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: mtt-userregistrationrequested
+    template:
+      metadata:
+        labels:
+          app: mtt-userregistrationrequested
+      spec:
+        containers:
+        - name: mtt-userregistrationrequested
+          image: ghcr.io/tehmaxwell/mtt-backend-user-registration:main
+          ports:
+          - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "200m"
