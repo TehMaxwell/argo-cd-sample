@@ -24,3 +24,18 @@ spec:
             cpu: "100m"
           limits:
             cpu: "200m"
+        env:
+          - name: "Topics__ConsumerTopic"
+            value: "user-registration-requested"
+          - name: "Topics__ProducerTopic"
+            value: "user-registration-completed"
+          - name: "ProducerConfiguration__BootstrapServers"
+            value: "kafka.kafka:9092"
+          - name: "ConsumerConfiguration__BootstrapServers"
+            value: "kafka.kafka:9092"
+          - name: "ConsumerConfiguration__GroupId"
+            value: "user-registration-group"
+          - name: "ConsumerConfiguration__AutoOffsetReset"
+            value: "Earliest"
+          - name: "ConsumerConfiguration__EnableAutoCommit"
+            value: "true"
