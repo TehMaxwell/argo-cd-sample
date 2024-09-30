@@ -24,3 +24,11 @@ spec:
             cpu: "100m"
           limits:
             cpu: "200m"
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          seccompProfile:
+            type: "RuntimeDefault"
+          capabilities:
+            drop:
+              - ALL
